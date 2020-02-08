@@ -1,19 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
+from .models import *
 
 
 def home(request):
     return render(request, 'accounts/dashboard.html')
 
 
-def product(request):
+def products(request):
+    products = Product.objects.all()
+    return render(request, 'accounts/product.html', {'products': products})
 
-    return render(request, 'accounts/product.html')
 
-
-def customer(request):
+def customers(request):
     return render(request, 'accounts/customer.html')
 
 # This is and example of a backend api call
