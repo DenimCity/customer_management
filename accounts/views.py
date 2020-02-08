@@ -5,17 +5,19 @@ from django.http import HttpResponse
 
 
 def home(request):
-    print("Hi Its me OHHHHHHHH SNAP I HAVE A LOG")
     return render(request, 'accounts/dashboard.html')
 
 
-def products(request):
-    print(request)
-    return HttpResponse('products')
+def product(request):
 
-# This is and example of a backend api call
+    return render(request, 'accounts/product.html')
 
 
 def customer(request):
-    print(request)
-    return HttpResponse('customer')
+    return render(request, 'accounts/customer.html')
+
+# This is and example of a backend api call
+
+# def customer(request):
+#     print(request)
+#     return HttpResponse('customer')
